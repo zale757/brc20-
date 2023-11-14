@@ -1,0 +1,61 @@
+We are performing our trusted setup ceremony using p0tion from PSE. Follow these steps to contribute to our trusted setup ceremony.
+IMPORTANT: Our circuits are massive, so this can take a considerable amount of time if done on a "normal" computer! For example an M1 laptop will take around 1 hour to contribute
+Please use an EC2 instance (a c5a.16xlarge will take about 10-15 minutes). Contact us if you do not have one. You will need around 20GB of space to store the zkeys so keep that in mind. Any issues please let us know.
+Install phase2cli by p0tion
+npm install -g -f @p0tion/phase2cli
+Ensure phase2cli version is 1.1.0
+phase2cli --version
+Auth with your Github account.
+phase2cli auth
+If running on a server, you will just need to copy the auth code, visit https://github.com/login/device and paste it there + authorize gist access for the transcript.
+Contribute
+phase2cli contribute --ceremony zkp2p-trusted-setup-ceremony
+Feel free to share your contribution and tag @zkp2p once you are done!
+Troubleshooting
+Authentication:
+After auth, wait maybe 1 minute to be safe before running contribute which may lag.
+Node version
+Please use node >16. Install nvm
+If you face "Unfortunately we could not find a user document with your information" error
+Take your github username and go to https://api.github.com/users/$USERNAME
+Check the following:
+"public_gists" >1
+"followers" >1
+"following" >5
+"created_at" >1 month old
+These are the requirements to participate in a p0tion ceremony.
+If you pass all of these but still get the same error, please run these commands again.
+phase2cli logout
+phase2cli auth
+phase2cli contribute --ceremony zkp2p-trusted-setup-ceremony
+
+
+这段文本是关于如何参与一个名为“zkp2p-trusted-setup-ceremony”的可信设置仪式的指南，该仪式使用了一个名为“p0tion”的软件或框架。可信设置仪式是在密码学和区块链领域中用于初始化某些类型的协议或系统的过程，特别是在零知识证明（ZKP）环境中。下面是对该指南的解释：
+
+概述
+目的：指导用户如何为“zkp2p-trusted-setup-ceremony”贡献计算资源。
+注意事项：计算任务非常大，需要强大的计算能力。建议使用AWS的EC2实例（推荐型号为c5a.16xlarge）以节省时间和资源。
+具体步骤
+准备适当的计算资源：
+
+因为计算任务非常大，使用普通电脑可能需要很长时间。例如，使用M1芯片的苹果笔记本大约需要1小时。
+推荐使用亚马逊云计算服务（AWS）的EC2实例，特别是型号为c5a.16xlarge的实例，大约需要10-15分钟。
+确保有足够的存储空间（大约20GB）来存储“zkeys”。
+安装phase2cli软件：
+
+通过npm安装@p0tion/phase2cli。这是一个命令行工具，用于参与可信设置仪式。
+确保安装的phase2cli版本是1.1.0。
+使用GitHub账户认证：
+
+使用phase2cli auth命令进行认证。
+如果在服务器上运行，需要复制认证代码，访问GitHub的指定链接进行认证，并授权Gist访问权。
+参与仪式：
+
+使用命令phase2cli contribute --ceremony zkp2p-trusted-setup-ceremony来贡献计算资源。
+分享贡献：
+
+完成后，可以分享你的贡献，并在社交媒体上标记@zkp2p。
+故障排除
+认证问题：认证后等待大约1分钟，以确保系统反应。
+Node版本：确保使用Node.js的版本高于16，可以通过安装nvm来管理不同版本的Node.js。
+GitHub用户要求：如果出现特定错误，检查你的GitHub用户信息是否满足以下要求：公共Gist超过1个，跟随者超过1个，正在关注的人超过5个，账户创建时间超过1个月。
